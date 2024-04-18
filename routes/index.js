@@ -21,7 +21,7 @@ fileNames.forEach((fileName)=>{
                 const module = await import(`./${fileName}`);
                 module.default(req,res, next)
             }catch(e){
-                next(error);
+                next(e);
             }
         });
     }
